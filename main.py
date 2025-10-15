@@ -31,6 +31,14 @@ class StatusBot(commands.Bot):
     async def on_ready(self):
         print("Bot is ready!")
 
+        # Clear any old guild-specific commands to avoid conflicts
+        for guild in self.guilds:
+            self.tree.clear_commands(guild=guild)
+
+        # Sync global commands for DM and server usage
+        synced = await self.tree.sync()
+        print(f"Synced {len(synced)} global command(s)
+
         # Load Ally list from file
         if os.path.exists(ALLY_LIST_FILE):
             with open(ALLY_LIST_FILE, "r") as f:
