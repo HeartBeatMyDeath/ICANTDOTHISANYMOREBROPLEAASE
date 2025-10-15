@@ -76,10 +76,6 @@ class StatusBot(commands.Bot):
         self.bot_message_id = bot_message_id
         
 
-        # Sync slash commands globally
-        synced = await self.tree.sync()
-        print(f"Synced {len(synced)} global command(s)")
-
         # Update embed to reflect current lists
         await self.update_embed()
 
