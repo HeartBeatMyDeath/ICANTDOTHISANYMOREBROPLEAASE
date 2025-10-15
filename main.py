@@ -168,5 +168,5 @@ async def show_enemies(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
-webserver.keepalive()
+webserver.keep_alive()
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
