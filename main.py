@@ -37,7 +37,7 @@ class StatusBot(commands.Bot):
 
         # Sync global commands for DM and server usage
         synced = await self.tree.sync()
-        print(f"Synced {len(synced)} global command(s)
+        print(f"Synced {len(synced)} global command(s)")
 
         # Load Ally list from file
         if os.path.exists(ALLY_LIST_FILE):
