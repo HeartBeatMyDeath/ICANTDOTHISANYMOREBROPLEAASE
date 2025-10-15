@@ -66,7 +66,10 @@ class StatusBot(commands.Bot):
             print(f"Found existing persistent message ID: {bot_message_id}")
 
         self.bot_message_id = bot_message_id
-
+        
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user}")
         # Sync slash commands globally
         synced = await self.tree.sync()
         print(f"Synced {len(synced)} global command(s)")
